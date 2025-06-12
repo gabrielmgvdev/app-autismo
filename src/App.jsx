@@ -258,7 +258,7 @@ function App() {
 const Icon = ({ children, className = '' }) => ( <span className={`inline-block align-middle ${className}`}>{children}</span> );
 const Section = ({ title, icon, children }) => ( <div className="bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-200"><h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-6 flex items-center gap-3 pb-4 border-b">{icon}{title}</h2><div className="grid grid-cols-1 md:grid-cols-2 gap-6">{children}</div></div> );
 const InputField = ({ label, ...props }) => ( <div><label className="block text-sm font-medium text-gray-700 mb-1">{label}</label><input {...props} className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm" /></div> );
-const TextAreaField = ({ label, ...props }) => ( <div className="md:col-span-2"><label className="block text-sm font-medium text-gray-700 mb-1">{label}</label><textarea {...props} rows="3" className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm" /></div> );
+const TextAreaField = ({ label, ...props }) => ( <div className="md:col-span-2"><label className="block text-sm font-medium text-gray-700 mb-1">{label}</label><textarea {...props} rows="3" className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm resize-none" /></div> );
 const SelectField = ({ label, options, ...props }) => ( <div><label className="block text-sm font-medium text-gray-700 mb-1">{label}</label><select {...props} className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm">{options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}</select></div> );
 
 const ChildDashboard = ({ db, userId, childProfile, interestsStrategies }) => {
