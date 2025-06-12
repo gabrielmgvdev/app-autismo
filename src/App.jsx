@@ -129,7 +129,19 @@ function App() {
               <TextAreaField label="Sinais de Sobrecarga" name="overloadSigns" value={communicationBehavior.overloadSigns} onChange={handleCommunicationBehaviorChange} />
               <TextAreaField label="Estratégias de Manejo" name="copingStrategies" value={communicationBehavior.copingStrategies} onChange={handleCommunicationBehaviorChange} />
             </Section>
-             <div className="flex justify-center mt-10"><button type="submit" className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full">Salvar Informações</button></div>
+            <Section title="3. Aspectos Sensoriais" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2c-.5 0-1 .5-1 1v18c0 .5.5 1 1 1s1-.5 1-1V3c0-.5-.5-1-1-1Z" /><path d="M12 17a5 5 0 0 1 5 5H7a5 5 0 0 1 5-5Z" /></svg>}>
+                <TextAreaField label="Hipersensibilidade (Ex: sons, luzes, texturas)" name="hypersensitivity" value={sensoryAspects.hypersensitivity} onChange={handleSensoryAspectsChange} />
+                <TextAreaField label="Hiposensibilidade (Ex: necessidade de movimento, pressão)" name="hyposensitivity" value={sensoryAspects.hyposensitivity} onChange={handleSensoryAspectsChange} />
+                <TextAreaField label="Estratégias para Lidar com Aspectos Sensoriais" name="sensoryStrategies" value={sensoryAspects.sensoryStrategies} onChange={handleSensoryAspectsChange} />
+            </Section>
+            <Section title="4. Interesses e Estratégias de Apoio na Escola" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 17h3a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h3" /><path d="M18 22V17" /><path d="M9 17v5" /><path d="M12 17v5" /><path d="M15 17h-6" /></svg>}>
+                <TextAreaField label="Hobbies e Interesses Especiais" name="hobbies" value={interestsStrategies.hobbies} onChange={handleInterestsStrategiesChange} />
+                <TextAreaField label="Atividades Favoritas na Escola" name="favoriteActivities" value={interestsStrategies.favoriteActivities} onChange={handleInterestsStrategiesChange} />
+                <TextAreaField label="Adaptações no Ambiente Escolar" name="environmentalAdaptations" value={interestsStrategies.environmentalAdaptations} onChange={handleInterestsStrategiesChange} />
+                <TextAreaField label="Rotinas e Estruturas que Ajudam" name="routines" value={interestsStrategies.routines} onChange={handleInterestsStrategiesChange} />
+                <TextAreaField label="Suporte Individualizado (se necessário)" name="individualizedSupport" value={interestsStrategies.individualizedSupport} onChange={handleInterestsStrategiesChange} />
+            </Section>
+            <div className="flex justify-center mt-10"><button type="submit" className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full">Salvar Informações</button></div>
           </form>
         ) : (
           <ChildDashboard childName={childProfile.name} routines={interestsStrategies.routines} hobbies={interestsStrategies.hobbies} favoriteActivities={interestsStrategies.favoriteActivities} />
